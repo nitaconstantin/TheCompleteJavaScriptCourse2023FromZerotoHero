@@ -25,3 +25,8 @@ let myCurrentJob = "Teacher";
 // let job2 = "teacher";
 
 console.log(myFirsJob);
+
+let country = "Romania";
+let continent = "Europe";
+let population = 19859575;
+console.log(country, continent, population);
