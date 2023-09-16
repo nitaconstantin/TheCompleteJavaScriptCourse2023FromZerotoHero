@@ -208,22 +208,32 @@ const ageJonas = 2037-1997
 //   console.log("Height is undefined");
 // }
 
-const age = "18";
-if (age === 18) console.log("You just became an adult :D (strict)");
+// const age = "18";
+// if (age === 18) console.log("You just became an adult :D (strict)");
 
-if (age == 18) console.log("You just became an adult :D (loose)");
+// if (age == 18) console.log("You just became an adult :D (loose)");
 
-const favourite = Number(prompt("'What's  your favourite number?"));
-if (favourite === 23) {
-  console.log("Cool! 23 is an amazing number!");
-} else if (favourite === 7) {
-  console.log("Seven is also a cool number!");
-} else if (favourite === 9) {
-  console.log("Nine is also a cool number!");
-} else {
-  console.log("Number is not 23 or 7 or 9!");
-}
+// const favourite = Number(prompt("'What's  your favourite number?"));
+// if (favourite === 23) {
+//   console.log("Cool! 23 is an amazing number!");
+// } else if (favourite === 7) {
+//   console.log("Seven is also a cool number!");
+// } else if (favourite === 9) {
+//   console.log("Nine is also a cool number!");
+// } else {
+//   console.log("Number is not 23 or 7 or 9!");
+// }
 
-if (favourite !== 23) {
-  console.log("Why not 23!");
-}
+// if (favourite !== 23) {
+//   console.log("Why not 23!");
+// }
+
+const age = 16;
+const A = false;
+const B = true;
+console.log(!A);
+
+console.log(A && B);
+console.log(A || B);
+console.log(!A && B);
+console.log(A || !B);
