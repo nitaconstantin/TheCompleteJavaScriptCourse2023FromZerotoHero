@@ -228,12 +228,35 @@ const ageJonas = 2037-1997
 //   console.log("Why not 23!");
 // }
 
-const age = 16;
-const A = false;
-const B = true;
-console.log(!A);
+// const age = 16;
+// const A = false;
+// const B = true;
+// console.log(!A);
 
-console.log(A && B);
-console.log(A || B);
-console.log(!A && B);
-console.log(A || !B);
+// console.log(A && B);
+// console.log(A || B);
+// console.log(!A && B);
+// console.log(A || !B);
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+// if (shouldDrive) {
+//   console.log("Sharah is able to drive!");
+// } else {
+//   console.log("Someone else should drive!");
+// }
+
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (shouldDrive && !isTired) {
+  console.log("Sharah is able to drive!");
+} else {
+  console.log("Someone else should drive!");
+}
