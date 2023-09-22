@@ -169,13 +169,13 @@
 //   console.log("You have a friend called Peter!");
 // }
 
-const jonasArray = [
-  "Jonas",
-  "Schmedtmann",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-];
+// const jonasArray = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
 
 const jonas = {
   firstName: "Jonas",
@@ -184,3 +184,57 @@ const jonas = {
   profession: "teacher",
   friends: ["Michael", "Peter", "Steven"],
 };
+
+console.log(jonas);
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+// console.log(jonas.'last' + nameKey)
+
+const interestedIn = prompt(
+  "What do you want to know about Jonas? Choose between firstName, lastName, age, profession and friends."
+);
+console.log(interestedIn);
+
+// switch (interestedIn) {
+//   case "firstName":
+//     console.log(jonas.firstName);
+//     break;
+//   case "lastName":
+//     console.log(jonas.lastName);
+//     break;
+//   case "age":
+//     console.log(jonas.age);
+//     break;
+//   case "profession":
+//     console.log(jonas.profession);
+//     break;
+//   case "friends":
+//     console.log(jonas.friends);
+//     break;
+//   default:
+//     console.log("No value!");
+//     break;
+// }
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, age, profession and friends"
+  );
+}
+
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasscmedtman";
+console.log(jonas);
+
+// Challenge
+// 'Jonas has 3 friends, and his best friend is Michael
+console.log(
+  `${jonas.firstName} has  ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`
+);
