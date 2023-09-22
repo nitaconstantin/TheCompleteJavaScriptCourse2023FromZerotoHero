@@ -291,6 +291,49 @@
 //   console.log(`Lifting weights repetition ${i} 🏋️`);
 // }
 
+// const jonasArray = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+
+// const types = [];
+// for (let i = 0; i < jonasArray.length; i++) {
+//   console.log(jonasArray[i], typeof jonasArray[i]);
+//   types.push(typeof jonasArray[i]);
+// }
+// console.log("Types: ", types);
+
+// const birthYears = [1991, 2007, 1969, 2020];
+// const ages = [];
+// for (let i = 0; i < birthYears.length; i++) {
+//   const age = 2037 - birthYears[i];
+//   ages.push(age);
+// }
+
+// console.log(ages);
+
+// // continue and break
+// console.log("------- ONLY STRINGS-------");
+// for (let i = 0; i < jonasArray.length; i++) {
+//   if (typeof jonasArray[i] !== "string") {
+//     continue;
+//   } else {
+//     console.log(jonasArray[i], typeof jonasArray[i]);
+//   }
+// }
+// console.log("--------BREAK WITH NUMBER--------");
+// for (let i = 0; i < jonasArray.length; i++) {
+//   if (typeof jonasArray[i] === "number") {
+//     break;
+//   } else {
+//     console.log(jonasArray[i], typeof jonasArray[i]);
+//   }
+// }
+
 const jonasArray = [
   "Jonas",
   "Schmedtmann",
@@ -300,36 +343,22 @@ const jonasArray = [
   true,
 ];
 
-const types = [];
-for (let i = 0; i < jonasArray.length; i++) {
-  console.log(jonasArray[i], typeof jonasArray[i]);
-  types.push(typeof jonasArray[i]);
-}
-console.log("Types: ", types);
+// 0, 1 ... 4
+// 4, 3 ... 4
 
-const birthYears = [1991, 2007, 1969, 2020];
-const ages = [];
-for (let i = 0; i < birthYears.length; i++) {
-  const age = 2037 - birthYears[i];
-  ages.push(age);
-}
+// for (let i = jonasArray.length - 1; i >= 0; i--) {
+//   console.log(jonasArray[i]);
+// }
 
-console.log(ages);
-
-// continue and break
-console.log("------- ONLY STRINGS-------");
-for (let i = 0; i < jonasArray.length; i++) {
-  if (typeof jonasArray[i] !== "string") {
-    continue;
-  } else {
-    console.log(jonasArray[i], typeof jonasArray[i]);
+for (let i = 1; i <= 5; i++) {
+  console.log(`Step ${i}:`);
+  for (let x = 1; x <= 3; x++) {
+    console.log(`Lifting weights repetition ${x} 🏋️`);
   }
-}
-console.log("--------BREAK WITH NUMBER--------");
-for (let i = 0; i < jonasArray.length; i++) {
-  if (typeof jonasArray[i] === "number") {
-    break;
-  } else {
-    console.log(jonasArray[i], typeof jonasArray[i]);
+  for (let y = 1; y <= 3; y++) {
+    console.log(`Geno repetition ${y} 🏋️`);
+  }
+  for (let z = 1; z <= 3; z++) {
+    console.log(`Push up repetition ${z} 🏋️`);
   }
 }
