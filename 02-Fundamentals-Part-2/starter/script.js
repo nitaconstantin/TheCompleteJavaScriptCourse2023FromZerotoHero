@@ -144,27 +144,43 @@
 // });
 // console.log(years2);
 
-const friends = ["Michael", "Steven", "Peter"];
+// const friends = ["Michael", "Steven", "Peter"];
 
-// Add elements
-const newLength = friends.push("Jay");
-console.log(friends);
-console.log(newLength);
-friends.unshift("John");
-console.log(friends);
+// // Add elements
+// const newLength = friends.push("Jay");
+// console.log(friends);
+// console.log(newLength);
+// friends.unshift("John");
+// console.log(friends);
 
-// Remove elements
-friends.pop();
-console.log(friends);
-friends.shift();
-console.log(friends);
-friends.push(23);
-console.log(friends.indexOf("Steven"));
-console.log(friends.indexOf("Bob"));
-console.log(friends.includes("Bob"));
-console.log(friends.includes("Steven"));
-console.log(friends.includes("23"));
+// // Remove elements
+// friends.pop();
+// console.log(friends);
+// friends.shift();
+// console.log(friends);
+// friends.push(23);
+// console.log(friends.indexOf("Steven"));
+// console.log(friends.indexOf("Bob"));
+// console.log(friends.includes("Bob"));
+// console.log(friends.includes("Steven"));
+// console.log(friends.includes("23"));
 
-if (friends.includes("Peter")) {
-  console.log("You have a friend called Peter!");
-}
+// if (friends.includes("Peter")) {
+//   console.log("You have a friend called Peter!");
+// }
+
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  profession: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
