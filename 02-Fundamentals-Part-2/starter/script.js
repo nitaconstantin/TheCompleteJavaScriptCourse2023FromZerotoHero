@@ -334,31 +334,50 @@
 //   }
 // }
 
-const jonasArray = [
-  "Jonas",
-  "Schmedtmann",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-  true,
-];
+// const jonasArray = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
 
-// 0, 1 ... 4
-// 4, 3 ... 4
+// // 0, 1 ... 4
+// // 4, 3 ... 4
 
-// for (let i = jonasArray.length - 1; i >= 0; i--) {
-//   console.log(jonasArray[i]);
+// // for (let i = jonasArray.length - 1; i >= 0; i--) {
+// //   console.log(jonasArray[i]);
+// // }
+
+// for (let i = 1; i <= 5; i++) {
+//   console.log(`Step ${i}:`);
+//   for (let x = 1; x <= 3; x++) {
+//     console.log(`Lifting weights repetition ${x} 🏋️`);
+//   }
+//   for (let y = 1; y <= 3; y++) {
+//     console.log(`Geno repetition ${y} 🏋️`);
+//   }
+//   for (let z = 1; z <= 3; z++) {
+//     console.log(`Push up repetition ${z} 🏋️`);
+//   }
 // }
 
-for (let i = 1; i <= 5; i++) {
-  console.log(`Step ${i}:`);
-  for (let x = 1; x <= 3; x++) {
-    console.log(`Lifting weights repetition ${x} 🏋️`);
-  }
-  for (let y = 1; y <= 3; y++) {
-    console.log(`Geno repetition ${y} 🏋️`);
-  }
-  for (let z = 1; z <= 3; z++) {
-    console.log(`Push up repetition ${z} 🏋️`);
-  }
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️`);
+// }
+console.log("-----While Loop-------");
+let rep2 = 1;
+while (rep2 <= 10) {
+  console.log(`Lifting weights repetition ${rep2}🏋️`);
+  rep2++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
 }
