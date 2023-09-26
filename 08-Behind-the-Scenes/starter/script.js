@@ -45,27 +45,60 @@
 // console.log(addDecl(2, 3));
 // // console.log(addExpr(2, 4));
 // console.log(addArr(2, 5));
-function addDecl(a, b) {
-  return a + b;
-}
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-const addExpr = function (a, b) {
-  return a + b;
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// var addArr = (a, b) => a + b;
+
+// // Example
+// if (!numProducts) deleteShoppingCart();
+// var numProducts = 10;
+// function deleteShoppingCart() {
+//   console.log('All products deleted');
+// }
+
+// var x = 1;
+// let y = 2;
+// const z = 3;
+
+// console.log(x === window.x); // true
+// console.log(y === window.y); // false
+// console.log(z === window.z); // false
+console.log(this);
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAge(1991);
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1991);
+
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
 };
 
-var addArr = (a, b) => a + b;
+jonas.calcAge();
 
-// Example
-if (!numProducts) deleteShoppingCart();
-var numProducts = 10;
-function deleteShoppingCart() {
-  console.log('All products deleted');
-}
+const matilda = {
+  year: 2017,
+};
 
-var x = 1;
-let y = 2;
-const z = 3;
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge();
 
-console.log(x === window.x); // true
-console.log(y === window.y); // false
-console.log(z === window.z); // false
+const f = jonas.calcAge;
+f();
