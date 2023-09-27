@@ -54,31 +54,37 @@ const restaurant = {
   },
 };
 
-console.log('------------OR--------------');
-//Use Any data type, return any data type, short circuiting
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
 
-console.log(undefined || 0 || '' || 'hello' || 23 || null);
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+// console.log('------------OR--------------');
+// //Use Any data type, return any data type, short circuiting
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// console.log(undefined || 0 || '' || 'hello' || 23 || null);
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
-console.log('-------AND--------');
-console.log(0 && 'Jonas');
-console.log(7 && 'jonas');
-console.log('hello' && 23 && null && 'jonas');
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
 
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
-}
+// console.log('-------AND--------');
+// console.log(0 && 'Jonas');
+// console.log(7 && 'jonas');
+// console.log('hello' && 23 && null && 'jonas');
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 // // Spread , because in RIGHT side of =
 // const arr = [1, 2, ...[3, 4]];
 // // Rest, because in LEFT side of =
