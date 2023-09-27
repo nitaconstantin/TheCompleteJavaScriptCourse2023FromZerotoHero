@@ -54,12 +54,42 @@ const restaurant = {
   },
 };
 
-restaurant.numGuests = 0;
-const guests = restaurant.numGuests || 10;
-console.log(guests);
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
 
-const guestsCorrect = restaurant.numGuests ?? 10;
-console.log(guestsCorrect);
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// mullish assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// and assignment operator
+rest2.owner = rest2.owner && '<ANONYMUS>';
+rest1.owner = rest1.owner && '<ANONYMUS>';
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+// const guestsCorrect = restaurant.numGuests ?? 10;
+// console.log(guestsCorrect);
 // console.log('------------OR--------------');
 // //Use Any data type, return any data type, short circuiting
 // console.log(3 || 'Jonas');
