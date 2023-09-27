@@ -41,6 +41,12 @@ const restaurant = {
       `Order Received! ${this.starterMenu[starterIndex]}, ${this.mainMenu[mainIndex]}, will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
 };
 
 restaurant.orderDelivery({
@@ -54,35 +60,83 @@ restaurant.orderDelivery({
   address: 'Via del Sole, 21',
   starterIndex: 1,
 });
-const { name, openingHours, categories } = restaurant;
 
-console.log(name, openingHours, categories);
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+const newArr = [1, 2, ...arr];
+console.log('NewArr: ', newArr);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+console.log(...newArr);
 
-// Default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
 
-console.log(menu, starters);
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
 
-// Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
+// Join 2 arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
 
-({ a, b } = obj);
-console.log(a, b);
+// Iterables: arrays, strings, maps, sets, but NOT objects
 
-// nested objects
-const {
-  fri: { open: o, close: c },
-} = openingHours;
-console.log(o, c);
+const str = 'Jonas';
+const letters = [...str, '', 'S.'];
+console.log(letters);
+
+console.log(...str);
+console.log('j', 'o');
+
+// console.log(`${...str} Schmedtmann`)
+
+// const ingredients = [
+//   prompt(`Let's make pasta! Ingredient 1?`),
+//   prompt(`Let's make pasta! Ingredient 2?`),
+//   prompt(`Let's make pasta! Ingredient 3?`),
+// ];
+
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Giuseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+
+console.log(restaurant.name, restaurantCopy.name);
+
+// const { name, openingHours, categories } = restaurant;
+
+// console.log(name, openingHours, categories);
+
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// // Default values
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+
+// console.log(menu, starters);
+
+// // Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+
+// ({ a, b } = obj);
+// console.log(a, b);
+
+// // nested objects
+// const {
+//   fri: { open: o, close: c },
+// } = openingHours;
+// console.log(o, c);
 // const arr = [2, 3, 4];
 // const a = arr[0];
 // const b = arr[1];
