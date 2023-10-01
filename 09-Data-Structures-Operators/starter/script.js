@@ -51,27 +51,66 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+// SETS
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet);
+console.log(new Set('Jonas'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet);
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+
+console.log(ordersSet);
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffSet = [...new Set(staff)];
+
+console.log(staffSet);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+console.log(new Set('jonasschmedtmann').size);
 // Property Names
-const properties = Object.keys(openingHours);
-console.log(properties);
-let openStr = `We are open on ${properties.length} days:`;
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+// let openStr = `We are open on ${properties.length} days:`;
 
-for (const day of properties) {
-  openStr += `${day}, `;
-}
-console.log(openStr);
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
 
-// Property Values
-const values = Object.values(openingHours);
-console.log(values);
+// // Property Values
+// const values = Object.values(openingHours);
+// console.log(values);
 
-// Entire object
-const entries = Object.entries(openingHours);
-// console.log(entries);
+// // Entire object
+// const entries = Object.entries(openingHours);
+// // console.log(entries);
 
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
 // // With optional chaining
