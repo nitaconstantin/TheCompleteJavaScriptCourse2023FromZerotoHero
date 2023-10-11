@@ -65,32 +65,47 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+/////////////////////////////////////////////////
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+currencies.forEach(function (currency, key, map) {
+  console.log(`${key}: ${currency}`);
+});
 
-/////////////////////////////////////////////////
+const currenciesUnique = new Set(['USD', 'Eur', 'GBP', 'Eur', 'GBP', 'USD']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${key}: ${value}`);
+});
 
 // for (const movement of movements) {
-for (const [i, movement] of movements.entries()) {
-  if (movement > 0) {
-    console.log(`Movement ${i + 1} You deposited ${movement}`);
-  } else {
-    console.log(`Movement ${i + 1} You withdrew ${Math.abs(movement)}`);
-  }
-}
-console.log('------------FOREACH------------');
-movements.forEach(function (movement, index, array) {
-  if (movement > 0) {
-    console.log(`Movement ${index + 1} You deposited ${movement}`);
-  } else {
-    console.log(`Movement ${index + 1}You withdrew ${Math.abs(movement)}`);
-  }
-});
+// for (const [i, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`Movement ${i + 1} You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${i + 1} You withdrew ${Math.abs(movement)}`);
+//   }
+// }
+// console.log('------------FOREACH------------');
+// movements.forEach(function (movement, index, array) {
+//   if (movement > 0) {
+//     console.log(`Movement ${index + 1} You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${index + 1}You withdrew ${Math.abs(movement)}`);
+//   }
+// });
 // let arr = ['a', 'b', 'c', 'd', 'e'];
 // console.log(arr.slice(2));
 // console.log(arr.slice(2, 4));
