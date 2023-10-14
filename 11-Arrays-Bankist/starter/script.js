@@ -79,6 +79,18 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLocaleLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUsernames(accounts); //  stw
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -171,23 +183,23 @@ const eurToUsd = 1.1;
 //   // return 23;
 // });
 
-const movementsUsdArrow = movements.map(move => move * eurToUsd);
-console.log(movements, movementsUsdArrow);
+// const movementsUsdArrow = movements.map(move => move * eurToUsd);
+// console.log(movements, movementsUsdArrow);
 
-const movementsUsdfor = [];
-for (const mov of movements) {
-  movementsUsdfor.push(mov * eurToUsd);
-}
+// const movementsUsdfor = [];
+// for (const mov of movements) {
+//   movementsUsdfor.push(mov * eurToUsd);
+// }
 
-const movementsDescriptions = movements.map(
-  (mov, i, arr) =>
-    // const type = mov > 0 ? 'deposited' : 'withdrew';
-    `Movement ${i + 1}: You ${type} ${mov > 0 ? 'deposited' : 'withdrew'} `
-  // if (mov > 0) {
-  //   return `Movement ${i + 1}: You ${type} ${mov}`;
-  // } else {
-  //   return `Movement ${i + 1}: You ${type} ${Math.abs(mov)}`;
-  // }
-);
+// const movementsDescriptions = movements.map(
+//   (mov, i, arr) =>
+//     // const type = mov > 0 ? 'deposited' : 'withdrew';
+//     `Movement ${i + 1}: You ${type} ${mov > 0 ? 'deposited' : 'withdrew'} `
+//   // if (mov > 0) {
+//   //   return `Movement ${i + 1}: You ${type} ${mov}`;
+//   // } else {
+//   //   return `Movement ${i + 1}: You ${type} ${Math.abs(mov)}`;
+//   // }
+// );
 
-console.log(movementsDescriptions);
+// console.log(movementsDescriptions);
