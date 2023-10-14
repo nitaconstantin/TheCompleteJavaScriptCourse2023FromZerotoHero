@@ -164,3 +164,30 @@ const currencies = new Map([
 // console.log(arr.at(-1));
 
 // console.log('jonas'.at(-1));
+
+const eurToUsd = 1.1;
+// const movementsUsd = movements.map(function (mov) {
+//   return mov * eurToUsd;
+//   // return 23;
+// });
+
+const movementsUsdArrow = movements.map(move => move * eurToUsd);
+console.log(movements, movementsUsdArrow);
+
+const movementsUsdfor = [];
+for (const mov of movements) {
+  movementsUsdfor.push(mov * eurToUsd);
+}
+
+const movementsDescriptions = movements.map(
+  (mov, i, arr) =>
+    // const type = mov > 0 ? 'deposited' : 'withdrew';
+    `Movement ${i + 1}: You ${type} ${mov > 0 ? 'deposited' : 'withdrew'} `
+  // if (mov > 0) {
+  //   return `Movement ${i + 1}: You ${type} ${mov}`;
+  // } else {
+  //   return `Movement ${i + 1}: You ${type} ${Math.abs(mov)}`;
+  // }
+);
+
+console.log(movementsDescriptions);
