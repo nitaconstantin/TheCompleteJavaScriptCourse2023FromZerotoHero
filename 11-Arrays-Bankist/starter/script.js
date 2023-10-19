@@ -102,7 +102,7 @@ const calcDisplaySummary = function (movements) {
     .filter(mov => mov > 0)
     .map(deposit => (deposit * 1.2) / 100)
     .filter((int, i, arr) => {
-      console.log(arr);
+      // console.log(arr);
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
@@ -277,12 +277,21 @@ const eurToUsd = 1.1;
 // console.log(max);
 
 // PIPELINE
-const totalDepositsInUSD = movements
-  .filter(mov => mov > 0)
-  .map((mov, i, arr) => {
-    // console.log(arr);
-    return mov * eurToUsd;
-  })
-  .reduce((acc, mov) => (acc += mov), 0);
+// const totalDepositsInUSD = movements
+//   .filter(mov => mov > 0)
+//   .map((mov, i, arr) => {
+//     // console.log(arr);
+//     return mov * eurToUsd;
+//   })
+//   .reduce((acc, mov) => (acc += mov), 0);
 
-console.log(totalDepositsInUSD);
+// console.log(totalDepositsInUSD);
+
+const firstWidrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWidrawal);
+
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
