@@ -406,11 +406,31 @@ const eurToUsd = 1.1;
 // console.log(deposits);
 
 // EVERY
-console.log(movements.every(mov => mov > 0));
-console.log(account4.movements.every(mov => mov > 0));
+// console.log(movements.every(mov => mov > 0));
+// console.log(account4.movements.every(mov => mov > 0));
 
-// Separate callback
-const deposit = mov => mov < 0;
-console.log(movements.some(deposit));
-console.log(movements.every(deposit));
-console.log(movements.filter(deposit));
+// // Separate callback
+// const deposit = mov => mov < 0;
+// console.log(movements.some(deposit));
+// console.log(movements.every(deposit));
+// console.log(movements.filter(deposit));
+const arr = [1, 2, 3, [4, 5, 6], 7, 8];
+console.log(arr.flat());
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
+// const allmovements = accountMovements.flat();
+// const overalBalance = allmovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+// flat
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+// flatMap
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance2);
