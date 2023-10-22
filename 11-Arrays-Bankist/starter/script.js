@@ -423,7 +423,7 @@ const eurToUsd = 1.1;
 // console.log(movements.every(deposit));
 // console.log(movements.filter(deposit));
 const arr = [1, 2, 3, [4, 5, 6], 7, 8];
-console.log(arr.flat());
+// console.log(arr.flat());
 // const accountMovements = accounts.map(acc => acc.movements);
 // console.log(accountMovements);
 // const allmovements = accountMovements.flat();
@@ -445,31 +445,62 @@ console.log(arr.flat());
 
 // Strings
 const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
-console.log(owners.sort());
-console.log(owners);
+// console.log(owners.sort());
+// console.log(owners);
 
 // Numbers
-console.log(movements);
-// console.log(movements.sort());
-// return  < 0, A, B
-// return > 0, B, A
+// console.log(movements);
+// // console.log(movements.sort());
+// // return  < 0, A, B
+// // return > 0, B, A
 
-// Ascending
-movements.sort(
-  (a, b) => a - b
-  // if (a > b) {
-  //   return 1;
-  // } else if (b > a) {
-  //   return -1;
-  // }
-);
-console.log(movements);
-// Descending
-movements.sort((a, b) => b - a);
-//   if (a > b) {
-//     return -1;
-//   } else if (b > a) {
-//     return 1;
-//   }
-// });
-console.log(movements);
+// // Ascending
+// movements.sort(
+//   (a, b) => a - b
+//   // if (a > b) {
+//   //   return 1;
+//   // } else if (b > a) {
+//   //   return -1;
+//   // }
+// );
+// console.log(movements);
+// // Descending
+// movements.sort((a, b) => b - a);
+// //   if (a > b) {
+// //     return -1;
+// //   } else if (b > a) {
+// //     return 1;
+// //   }
+// // });
+// console.log(movements);
+
+const arr2 = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+const x = new Array(7);
+console.log(x);
+
+// console.log(x.map(() => 5));
+
+// x.fill(1);
+x.fill(1, 3, 5);
+console.log(x);
+
+arr2.fill(23, 2, 6);
+console.log(arr2);
+
+// Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  const movementsUI2 = [...document.querySelector('.movemements__value')];
+  console.log(movementsUI);
+});
