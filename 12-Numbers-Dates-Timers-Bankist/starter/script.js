@@ -180,14 +180,40 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+const startLoggedOutTimer = function () {
+  const tick = function () {
+    const min = String(Math.trunc(time / 60)).padStart(2, '0');
+    const sec = String(Math.trunc(time % 60)).padStart(2, '0');
+    // In each call, print the remaining time to UI
+    labelTimer.textContent = `${min}:${sec}`;
+
+    // Whem 0 seconds, stop timer and log out user
+    if (time === 0) {
+      clearInterval(timer);
+      labelWelcome.textContent = 'Log in to get started';
+      containerApp.style.opacity = 0;
+    }
+    // Decrease 1 second
+    time--;
+  };
+  // Set time to 5 minutes
+  let time = 120;
+
+  // Call the timer wevery second
+  tick();
+  const timer = setInterval(tick, 1000);
+
+  return timer;
+};
+
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 
 // Fake Always logged in
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100;
 
 // Experimenting API
 const locale = navigator.language;
@@ -245,7 +271,10 @@ btnLogin.addEventListener('click', function (e) {
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
-
+    if (timer) {
+      clearInterval(timer);
+    }
+    timer = startLoggedOutTimer();
     // Update UI
     updateUI(currentAccount);
   }
@@ -275,6 +304,10 @@ btnTransfer.addEventListener('click', function (e) {
 
     // Update UI
     updateUI(currentAccount);
+
+    // Reset Timer
+    clearInterval(timer);
+    timer = startLoggedOutTimer();
   }
 });
 
@@ -293,6 +326,10 @@ btnLoan.addEventListener('click', function (e) {
 
       // Update UI
       updateUI(currentAccount);
+
+      // Reset Timer
+      clearInterval(timer);
+      timer = startLoggedOutTimer();
     }, 2500);
   }
   inputLoanAmount.value = '';
@@ -515,21 +552,21 @@ btnSort.addEventListener('click', function (e) {
 // );
 
 // SetTimeout
-const ingredients = ['olives', 'spinach'];
-const pizzaTimer = setTimeout(
-  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
-  3000,
-  [...ingredients]
-);
-if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+// const ingredients = ['olives', 'spinach'];
+// const pizzaTimer = setTimeout(
+//   (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+//   3000,
+//   [...ingredients]
+// );
+// if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
 
-console.log('Waiting...');
+// console.log('Waiting...');
 
-// setInterval
-setInterval(function () {
-  const now = new Date();
-  const hours = `${now.getHours()}`.padStart(2, 0);
-  const minutes = `${now.getMinutes()}`.padStart(2, 0);
-  const seconds = `${now.getSeconds()}`.padStart(2, 0);
-  console.log(`${hours}:${minutes}:${seconds}`);
-}, 1000);
+// // setInterval
+// setInterval(function () {
+//   const now = new Date();
+//   const hours = `${now.getHours()}`.padStart(2, 0);
+//   const minutes = `${now.getMinutes()}`.padStart(2, 0);
+//   const seconds = `${now.getSeconds()}`.padStart(2, 0);
+//   console.log(`${hours}:${minutes}:${seconds}`);
+// }, 1000);
