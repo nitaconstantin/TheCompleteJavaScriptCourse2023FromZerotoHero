@@ -284,18 +284,19 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    // Add loan date
-    currentAccount.movementsDates.push(new Date().toISOString());
+      // Add loan date
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 2500);
   }
   inputLoanAmount.value = '';
 });
-
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -498,17 +499,37 @@ btnSort.addEventListener('click', function (e) {
 // const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 // console.log(days1);
 
-const num = 3884764.23;
+// const num = 3884764.23;
 
-const options = {
-  style: 'currency',
-  unit: 'celsius',
-  currency: 'EUR',
-  // useGrouping: false,
-};
-console.log('US: ', new Intl.NumberFormat('en-US', options).format(num));
-console.log('Germany: ', new Intl.NumberFormat('de-DE', options).format(num));
-console.log(
-  'Browser: ',
-  new Intl.NumberFormat(navigator.language, options).format(num)
+// const options = {
+//   style: 'currency',
+//   unit: 'celsius',
+//   currency: 'EUR',
+//   // useGrouping: false,
+// };
+// console.log('US: ', new Intl.NumberFormat('en-US', options).format(num));
+// console.log('Germany: ', new Intl.NumberFormat('de-DE', options).format(num));
+// console.log(
+//   'Browser: ',
+//   new Intl.NumberFormat(navigator.language, options).format(num)
+// );
+
+// SetTimeout
+const ingredients = ['olives', 'spinach'];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  [...ingredients]
 );
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+console.log('Waiting...');
+
+// setInterval
+setInterval(function () {
+  const now = new Date();
+  const hours = `${now.getHours()}`.padStart(2, 0);
+  const minutes = `${now.getMinutes()}`.padStart(2, 0);
+  const seconds = `${now.getSeconds()}`.padStart(2, 0);
+  console.log(`${hours}:${minutes}:${seconds}`);
+}, 1000);
