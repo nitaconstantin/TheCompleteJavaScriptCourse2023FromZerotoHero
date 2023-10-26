@@ -8,6 +8,8 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+const section1 = document.getElementById('section--1');
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -105,6 +107,18 @@ const nav = document.querySelector('.nav');
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 
 nav.addEventListener('mouseout', handleHover.bind(1));
+// 196. Implementing a Sticky Navigation: The Scroll Event
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+
+window.addEventListener('scroll', function (e) {
+  if (window.scrollY > initialCoords.top) {
+    nav.classList.add('sticky');
+  } else {
+    nav.classList.remove('sticky');
+  }
+});
+
 // 186. Selecting, Creating, and Deleting Elements
 // Selecting Elements
 // console.log(document.documentElement);
@@ -191,8 +205,6 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 // 188. Implementing Smooth Scrolling
 const btnScrollTo = document.querySelector('.btn--scroll-to');
-
-const section1 = document.getElementById('section--1');
 
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
