@@ -274,6 +274,21 @@ dotContainer.addEventListener('click', function (e) {
   }
 });
 
+// 202. Lifecycle DOM Events
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built', e);
+});
+
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
+
 // curSlide 1:
 // 186. Selecting, Creating, and Deleting Elements
 // Selecting Elements
