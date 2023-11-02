@@ -12,7 +12,7 @@ const Person = function (firstName, birthYear) {
 };
 
 const jonas = new Person('Jonas', 1991);
-console.log(jonas);
+// console.log(jonas);
 
 // 1. New {} is created
 // 2. function is called, this = {}
@@ -21,49 +21,86 @@ console.log(jonas);
 
 const matilda = new Person('Matilda', 2017);
 const jack = new Person('Jack', 1975);
-console.log(matilda, jack);
+// console.log(matilda, jack);
 
-console.log(jonas instanceof Person);
+// console.log(jonas instanceof Person);
 
-// Prototypes
-console.log(Person.prototype);
-Person.prototype.calcAge = function () {
-  console.log(2037 - this.birthYear);
-};
+// // Prototypes
+// console.log(Person.prototype);
+// Person.prototype.calcAge = function () {
+//   console.log(2037 - this.birthYear);
+// };
 
-jonas.calcAge();
-matilda.calcAge();
-// jack.calcAge();
+// jonas.calcAge();
+// matilda.calcAge();
+// // jack.calcAge();
 
-console.log(jonas.__proto__);
-console.log(jonas.__proto__ === Person.prototype);
+// console.log(jonas.__proto__);
+// console.log(jonas.__proto__ === Person.prototype);
 
-// console.log(Person.prototype.isPrototypeOf(Person));
-console.log(Person.prototype.isPrototypeOf(jonas));
+// // console.log(Person.prototype.isPrototypeOf(Person));
+// console.log(Person.prototype.isPrototypeOf(jonas));
 
-//prototypeOfLinkedObjects
+// //prototypeOfLinkedObjects
 
-Person.prototype.species = 'Homo Sapiens';
-console.log(jonas.species, matilda.species);
+// Person.prototype.species = 'Homo Sapiens';
+// console.log(jonas.species, matilda.species);
 
-console.log(jonas.hasOwnProperty('firstName'));
-console.log(jonas.hasOwnProperty('species'));
+// console.log(jonas.hasOwnProperty('firstName'));
+// console.log(jonas.hasOwnProperty('species'));
 
-console.log(jonas.__proto__);
-console.log(jonas.__proto__.__proto__);
+// console.log(jonas.__proto__);
+// console.log(jonas.__proto__.__proto__);
 
-console.dir(Person.prototype.constructor);
+// console.dir(Person.prototype.constructor);
 
-const arr = [3, 6, 4, 5, 6, 9, 3]; // new Array === []
-console.log(arr.__proto__);
-console.log(arr.__proto__ === Array.prototype);
+// const arr = [3, 6, 4, 5, 6, 9, 3]; // new Array === []
+// console.log(arr.__proto__);
+// console.log(arr.__proto__ === Array.prototype);
 
-console.log(arr.__proto__.__proto__);
+// console.log(arr.__proto__.__proto__);
 
-Array.prototype.unique = function () {
-  return [...new Set(this)];
-};
+// Array.prototype.unique = function () {
+//   return [...new Set(this)];
+// };
 
-console.log(arr.unique());
-const h1 = document.querySelector('h1');
-console.dir(x => x + 1);
+// console.log(arr.unique());
+// const h1 = document.querySelector('h1');
+// console.dir(x => x + 1);
+
+// class expression
+// const PersonCl = class{
+
+// }
+
+// class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  // Methods will be added to the .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+console.log(jessica);
+console.log(jessica.calcAge());
+
+console.log(jessica.__proto__ === PersonCl.prototype);
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`);
+// };
+
+jessica.greet();
+
+// 1. Classes are NOT hoisted
+// 2. Classes are first-class citizens
+// 3. Classes are executed in strict mode
